@@ -26,9 +26,9 @@ function setup(){
 }
 
 function draw(){
-    background(256);
+    background(0);
     if(animateBtn.checked) {
-        angle += 0.01;
+        angle += 0.005;
     }
     else {
         angle = parseFloat(angleSlider.value);
@@ -50,7 +50,7 @@ function draw(){
     
     len = parseInt(lenSlider.value);
     stroke(color1, color2, color3);
-    translate(width/2, height - height/4);
+    translate(width/2, height - height/8);
     fractalBranch(len);
 
     // switch(fractal) {
@@ -67,15 +67,15 @@ function draw(){
 }
 
 function fractalBranch(len) {
-    if(len < 5) return;
+    if(len < 10) return;
     line(0, 0, 0, -len);
     translate(0, -len);
     push();
     rotate(angle);
-    fractalBranch(len * 0.78);
+    fractalBranch(len * 0.8);
     pop();
     push();
     rotate(angle * -1);
-    fractalBranch(len * 0.78);
+    fractalBranch(len * 0.8);
     pop();
 }
