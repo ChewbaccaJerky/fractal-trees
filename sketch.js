@@ -10,21 +10,22 @@ var redSlider = 0,
     lenSlider = 0;
 
 function setup(){
-    createCanvas(600, 600);
-    angleSlider = createSlider(0, TWO_PI, TWO_PI, 0.1);
-    blueSlider = createSlider(0, 256, 0, 1);
-    redSlider = createSlider(0, 256, 0, 1);
-    greenSlider = createSlider(0, 256, 0, 1);
-    lenSlider = createSlider(0, 100, 10, 1);
+    let sliderContainer = document.getElementsByClassName('slider-container')[0];
+    createCanvas(window.innerWidth - sliderContainer.clientWidth, window.innerHeight);
+    angleSlider = document.getElementById('angle');
+    lenSlider = document.getElementById('len');
+    redSlider = document.getElementById('r');
+    greenSlider = document.getElementById('g');
+    blueSlider = document.getElementById('b');
 }
 
 function draw(){
-    background(50);
-    angle = angleSlider.value();
-    color1 = blueSlider.value();
-    color2 = redSlider.value();
-    color3 = greenSlider.value();
-    len = lenSlider.value();
+    background(256);
+    angle = parseFloat(angleSlider.value);
+    color1 = parseInt(blueSlider.value);
+    color2 = parseInt(redSlider.value);
+    color3 = parseInt(greenSlider.value);
+    len = parseInt(lenSlider.value);
     stroke(color1, color2, color3);
     translate(width/2, height - height/4);
     branch(len);

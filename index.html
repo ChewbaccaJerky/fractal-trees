@@ -5,11 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fractal Trees</title>
-    <link href="style.css" rel="stylesheet" type="text/css"/>;
+    <link href="style.css" rel="stylesheet" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
 </head>
 <body>
+    <div class="slider-container">
+        Angle:
+        <input type="range" min="1" max="6.28318530718" value="0" class="slider" id="angle" step="0.0001">
+        Branches:
+        <input type="range" min="1" max="100" value="50" class="slider" id="len">
+        R:
+        <input type="range" min="1" max="256" value="50" class="slider" id="r">
+        G:
+        <input type="range" min="1" max="256" value="50" class="slider" id="g">
+        B:
+        <input type="range" min="1" max="256" value="50" class="slider" id="b">
+        Animation:
+        <input type="checkbox" id="animate">
+    </div>
+
+
     <script src="./sketch.js"></script>
 </body>
 </html>
